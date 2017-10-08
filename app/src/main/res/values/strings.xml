@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">InfoSystem</string>
+    <string name="infoSystem">中山大学学生信息系统</string>
+    <string name="stuNum">学号：</string>
+    <string name="code">密码：</string>
+    <string name="studentBtn">学生</string>
+    <string name="teacherBtn">教职工</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+</resources>

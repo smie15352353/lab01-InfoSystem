@@ -1,11 +1,31 @@
 <resources>
     <string name="app_name">InfoSystem</string>
     <string name="infoSystem">中山大学学生信息系统</string>
-    <string name="stuNum">学号：</string>
-    <string name="code">密码：</string>
+    <string name="stuNum">请输入学号</string>
+    <string name="password">请输入密码</string>
     <string name="studentBtn">学生</string>
     <string name="teacherBtn">教职工</string>
     <string name="login">登录</string>
     <string name="register">注册</string>
     <string name="afterClick">不存在的</string>
+    
+    <string name="upload">上传头像</string>
+    <string name="camera">拍摄</string>
+    <string name="album">从相册选择</string>
+    <string name="dialogCancel">取消</string>
+    <string name="dialogToast1">您选择了[拍摄]</string>
+    <string name="dialogToast2">您选择了[从相册选择]</string>
+    <string name="dialogToast3">您选择了[取消]</string>
+
+    <string name="radioSnackbar1">您选择了学生</string>
+    <string name="radioSnackbar2">您选择了教职工</string>
+    <string name="snackbarYes">确定</string>
+    <string name="snackbarToast">Snackbar的确定按钮被点击了</string>
+
+    <string name="stuNumEmpty">学号不能为空</string>
+    <string name="passwordEmpty">密码不能为空</string>
+    <string name="inputError">学号或密码错误</string>
+    <string name="loginSuccess">登录成功</string>
+    
+    <string name="registerFail">注册功能尚未启用</string>
 </resources>

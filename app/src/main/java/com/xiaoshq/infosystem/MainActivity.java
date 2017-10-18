@@ -41,19 +41,19 @@ public class MainActivity extends AppCompatActivity {
         String[] Items={this.getString(R.string.camera),this.getString(R.string.album)};
         final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setTitle(R.string.upload)
-            .setItems(Items, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                   if(i == 0) toastShow(R.string.dialogToast1);
-                   else if(i == 1) toastShow(R.string.dialogToast2);
-                }
-            })
-            .setNegativeButton(R.string.dialogCancel, new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    toastShow(R.string.dialogToast3);
-                }
-            });
+                .setItems(Items, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if (i == 0) toastShow(R.string.dialogToast1);
+                        else if (i == 1) toastShow(R.string.dialogToast2);
+                    }
+                })
+                .setNegativeButton(R.string.dialogCancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        toastShow(R.string.dialogToast3);
+                    }
+                });
         // show
         ImageView img = (ImageView) findViewById(R.id.imgSYSU);
         img.setOnClickListener(new View.OnClickListener() {
@@ -67,7 +67,9 @@ public class MainActivity extends AppCompatActivity {
     public void toastShow(String str) {
         Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
     }
-    public void toastShow(int id) { Toast.makeText(this, id, Toast.LENGTH_SHORT).show(); }
+    public void toastShow(int id) {
+        Toast.makeText(this, id, Toast.LENGTH_SHORT).show();
+    }
 
     public void initSnackbar() {
         final RadioButton stuBTN = (RadioButton) findViewById(R.id.studentBtn);
@@ -132,9 +134,12 @@ public class MainActivity extends AppCompatActivity {
                     stuNum.setErrorEnabled(true);
                 }else if(passwordStr.isEmpty()) {
                     password.setError(id2string(R.string.passwordEmpty));
+                    stuNum.setErrorEnabled(false);
                     password.setErrorEnabled(true);
                 }else if(!validateStuNum(stuNumStr) || !validatePassword(passwordStr)) {
                     snackbarShow(R.string.inputError);
+                    stuNum.setErrorEnabled(false);
+                    password.setErrorEnabled(false);
                 }else {
                     snackbarShow(R.string.loginSuccess);
                     stuNum.setErrorEnabled(false);
@@ -151,8 +156,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 RadioButton stuBTN = (RadioButton) findViewById(R.id.studentBtn);
                 RadioButton teaBTN = (RadioButton) findViewById(R.id.teacherBTN);
-                String grpText1 = stuBTN.getText().toString();
-                String grpText2 = teaBTN.getText().toString();
                 if (stuBTN.isChecked()) {
                     snackbarShow(id2string(R.string.studentBtn) + id2string(R.string.registerFail));
                 }

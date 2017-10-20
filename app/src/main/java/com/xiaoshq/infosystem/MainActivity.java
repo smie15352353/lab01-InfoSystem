@@ -132,6 +132,9 @@ public class MainActivity extends AppCompatActivity {
                 if(stuNumStr.isEmpty()) {
                     stuNum.setError(id2string(R.string.stuNumEmpty));
                     stuNum.setErrorEnabled(true);
+                    if(!passwordStr.isEmpty()){
+                        password.setErrorEnabled(false);
+                    }
                 }else if(passwordStr.isEmpty()) {
                     password.setError(id2string(R.string.passwordEmpty));
                     stuNum.setErrorEnabled(false);
